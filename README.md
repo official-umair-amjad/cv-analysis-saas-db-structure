@@ -26,10 +26,6 @@ The system is designed as a multi-tenant SaaS application with the following key
 │   ├── 003_seed_jobs_candidates.sql # Sample jobs, candidates, and matches
 │   ├── 004_create_auth_users.sql  # Auth users creation
 │   └── 005_seed_subscription_plans.sql # Sample subscription plans and data
-├── tests/
-│   ├── test_schema.sql                # Schema validation and testing
-│   ├── test_simple_rankings.sql       # Job rankings demonstration
-brief
 └── README.md                      # This file
 ```
 
