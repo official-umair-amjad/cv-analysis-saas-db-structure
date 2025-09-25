@@ -28,85 +28,6 @@ The system is designed as a multi-tenant SaaS application with the following key
 └── README.md                      # This file
 ```
 
-## 🗄️ Database Schema
-
-### Core Tables
-
-1. **organizations** - Multi-tenant root table
-   - Stores company information and subscription details
-   - Each organization has its own data isolation
-
-2. **user_profiles** - User management
-   - Extends Supabase auth.users
-   - Links users to their organization
-   - Role-based permissions (admin, recruiter, viewer)
-
-3. **jobs** - Job postings
-   - Job descriptions and requirements
-   - Status tracking (draft, active, paused, closed)
-   - Salary and location information
-
-4. **candidates** - Candidate information
-   - Personal details and contact information
-   - Source tracking (LinkedIn, Indeed, referral, etc.)
-
-5. **resumes** - CV/Resume files
-   - File storage metadata
-   - Text extraction for AI processing
-   - Deduplication using content hashing
-
-6. **match_results** - AI matching results
-   - Match scores (overall, skills, experience, education)
-   - AI-generated summaries and recommendations
-   - Strengths and concerns analysis
-
-7. **job_applications** - Application tracking
-   - Links candidates to jobs
-   - Application status workflow
-   - Review tracking
-
-8. **subscription_plans** - Subscription plan definitions
-   - Plan details (pricing, limits, features)
-   - Feature flags and capabilities
-   - Active/inactive status
-
-9. **subscriptions** - Organization subscriptions
-   - Links organizations to subscription plans
-   - Billing cycle and status tracking
-   - Trial periods and cancellation handling
-   - Integration with external billing systems (Stripe)
-
-10. **subscription_usage** - Usage tracking
-    - Daily usage metrics per organization
-    - User count, job creation, candidate additions
-    - Storage and API usage tracking
-
-### Key Features
-
-- **UUID Primary Keys**: All tables use UUIDs for better security and scalability
-- **Audit Trails**: Created/updated timestamps on all tables
-- **Data Integrity**: Foreign key constraints and check constraints
-- **Performance**: Strategic indexes for common query patterns
-- **Security**: Comprehensive RLS policies for multi-tenant isolation
-
-## 🔒 Security Model
-
-### Row Level Security (RLS)
-
-The system implements comprehensive RLS policies to ensure complete data isolation between organizations:
-
-- **Organization Isolation**: Users can only access data from their own organization
-- **Role-Based Access**: Different permissions for admins, recruiters, and viewers
-- **Helper Functions**: Secure functions to get user organization and role information
-- **Audit Functions**: Organization statistics and reporting functions
-
-### Key Security Features
-
-1. **Multi-tenant Isolation**: Complete data separation between organizations
-2. **Role-based Permissions**: Granular access control based on user roles
-3. **Secure Functions**: Helper functions with SECURITY DEFINER for safe access
-4. **Audit Logging**: Built-in tracking of data changes and access
-
 ## 🚀 Deployment Instructions
 
 ### Prerequisites
@@ -190,6 +111,86 @@ Rank | Candidate Name    | Score | Rating    | AI Summary
 3    | Carol White      | 95.0  | 🌟 Excellent | Perfect match for DevOps role...
 4    | More...          | 0.0.. | 🌟 Excellent | Perfect match for role...
 ```
+## 🔒 Security Model
+
+### Row Level Security (RLS)
+
+The system implements comprehensive RLS policies to ensure complete data isolation between organizations:
+
+- **Organization Isolation**: Users can only access data from their own organization
+- **Role-Based Access**: Different permissions for admins, recruiters, and viewers
+- **Helper Functions**: Secure functions to get user organization and role information
+- **Audit Functions**: Organization statistics and reporting functions
+
+
+## 🗄️ Database Schema
+
+### Core Tables
+
+1. **organizations** - Multi-tenant root table
+   - Stores company information and subscription details
+   - Each organization has its own data isolation
+
+2. **user_profiles** - User management
+   - Extends Supabase auth.users
+   - Links users to their organization
+   - Role-based permissions (admin, recruiter, viewer)
+
+3. **jobs** - Job postings
+   - Job descriptions and requirements
+   - Status tracking (draft, active, paused, closed)
+   - Salary and location information
+
+4. **candidates** - Candidate information
+   - Personal details and contact information
+   - Source tracking (LinkedIn, Indeed, referral, etc.)
+
+5. **resumes** - CV/Resume files
+   - File storage metadata
+   - Text extraction for AI processing
+   - Deduplication using content hashing
+
+6. **match_results** - AI matching results
+   - Match scores (overall, skills, experience, education)
+   - AI-generated summaries and recommendations
+   - Strengths and concerns analysis
+
+7. **job_applications** - Application tracking
+   - Links candidates to jobs
+   - Application status workflow
+   - Review tracking
+
+8. **subscription_plans** - Subscription plan definitions
+   - Plan details (pricing, limits, features)
+   - Feature flags and capabilities
+   - Active/inactive status
+
+9. **subscriptions** - Organization subscriptions
+   - Links organizations to subscription plans
+   - Billing cycle and status tracking
+   - Trial periods and cancellation handling
+   - Integration with external billing systems (Stripe)
+
+10. **subscription_usage** - Usage tracking
+    - Daily usage metrics per organization
+    - User count, job creation, candidate additions
+    - Storage and API usage tracking
+
+### Key Features
+
+- **UUID Primary Keys**: All tables use UUIDs for better security and scalability
+- **Audit Trails**: Created/updated timestamps on all tables
+- **Data Integrity**: Foreign key constraints and check constraints
+- **Performance**: Strategic indexes for common query patterns
+- **Security**: Comprehensive RLS policies for multi-tenant isolation
+
+
+### Key Security Features
+
+1. **Multi-tenant Isolation**: Complete data separation between organizations
+2. **Role-based Permissions**: Granular access control based on user roles
+3. **Secure Functions**: Helper functions with SECURITY DEFINER for safe access
+4. **Audit Logging**: Built-in tracking of data changes and access
 
 
 ## 🔧 Key Functions
