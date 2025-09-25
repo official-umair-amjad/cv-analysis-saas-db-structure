@@ -190,6 +190,16 @@ JOIN candidates c ON mr.candidate_id = c.id
 ORDER BY mr.match_score DESC;
 ```
 
+### Expected Output:
+```
+Rank | Candidate Name    | Score | Rating    | AI Summary
+-----|------------------|-------|-----------|------------------
+1    | Alice Martinez   | 92.5  | 🌟 Excellent | Strong React and Node.js experience...
+2    | Bob Thompson     | 78.0  | ✅ Good      | Good DevOps skills but limited frontend...
+3    | Carol White      | 95.0  | 🌟 Excellent | Perfect match for DevOps role...
+```
+
+
 ## 🔧 Key Functions
 
 ### Helper Functions
@@ -246,13 +256,3 @@ This schema supports:
 7. **Subscription Management**: Flexible billing and plan management
 8. **Usage Tracking**: Monitor resource consumption and enforce limits
 9. **Billing Integration**: Ready for Stripe and other payment processors
-
-
-### Expected Output:
-```
-Rank | Candidate Name    | Score | Rating    | AI Summary
------|------------------|-------|-----------|------------------
-1    | Alice Martinez   | 92.5  | 🌟 Excellent | Strong React and Node.js experience...
-2    | Bob Thompson     | 78.0  | ✅ Good      | Good DevOps skills but limited frontend...
-3    | Carol White      | 95.0  | 🌟 Excellent | Perfect match for DevOps role...
-```
