@@ -137,6 +137,8 @@ CREATE POLICY "Users can update match results in their organization" ON match_re
 CREATE POLICY "Admins can delete match results in their organization" ON match_results
     FOR DELETE USING (organization_id = get_user_organization_id() AND is_user_admin());
 
+
+
 -- Job applications policies
 -- Users can view job applications in their organization
 CREATE POLICY "Users can view job applications in their organization" ON job_applications
