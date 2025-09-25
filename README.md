@@ -9,7 +9,7 @@ This repository contains the database schema for a multi-tenant SaaS recruitment
 
 ## The English Test results
 
-[![English Test Results](./english test ss.png)](./english test ss.pdf)
+[![English Test Results](./english-test-ss.png)](./english-test-ss.pdf)
 
 ## Architecture Overview
 
