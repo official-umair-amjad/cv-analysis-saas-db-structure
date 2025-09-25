@@ -4,11 +4,12 @@ This repository contains the database schema for a multi-tenant SaaS recruitment
 
 ## Loom Video link, Explaining
 
-- link explaining Schema and RLS: 
-    https://www.loom.com/share/a657f762746f46f39496e7ae21b9853b?sid=0fb4cd23-ece9-4337-a949-0783762374ef
-- link showing and testing in SUpabase
-    https://www.loom.com/share/54f33a12dac842e18b0e935d8ba50e54?sid=12a474af-e6d6-4fb6-9cc5-f3181ede9a92
+- link explaining Schema and RLS: https://www.loom.com/share/a657f762746f46f39496e7ae21b9853b?sid=0fb4cd23-ece9-4337-a949-0783762374ef
+- link showing and testing in SUpabase: https://www.loom.com/share/54f33a12dac842e18b0e935d8ba50e54?sid=12a474af-e6d6-4fb6-9cc5-f3181ede9a92
 
+## The English Test results
+
+[![English Test Results](./english test ss.png)](./english test ss.pdf)
 
 ## Architecture Overview
 
