@@ -26,9 +26,10 @@ The system is designed as a multi-tenant SaaS application with the following key
 │   ├── 003_seed_jobs_candidates.sql # Sample jobs, candidates, and matches
 │   ├── 004_create_auth_users.sql  # Auth users creation
 │   └── 005_seed_subscription_plans.sql # Sample subscription plans and data
-├── test_schema.sql                # Schema validation and testing
-├── test_simple_rankings.sql       # Job rankings demonstration
-├── context.md                     # Test requirements and client brief
+├── tests/
+│   ├── test_schema.sql                # Schema validation and testing
+│   ├── test_simple_rankings.sql       # Job rankings demonstration
+brief
 └── README.md                      # This file
 ```
 
@@ -117,27 +118,13 @@ The system implements comprehensive RLS policies to ensure complete data isolati
 
 - Supabase project set up
 - Database access with appropriate permissions
-- Supabase CLI (optional, for local development)
 
-### Option 1: Quick Test Deployment (Recommended for Testing)
-
-For quick testing without setting up authentication:
-
-```sql
--- Run the test deployment script
-\i deploy_test.sql
-```
-
-This will:
-- Create all tables and RLS policies
-- Load sample data without requiring auth.users entries
-- Perfect for testing the schema and RLS policies
 
 ### Option 2: Full Production Deployment
 
 For production use with proper authentication:
 
-#### Step 1: Run Migrations
+#### Step 1: Run Migrations from folders mentioned
 
 ```sql
 -- Run in Supabase SQL Editor or via CLI
