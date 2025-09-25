@@ -45,7 +45,8 @@ For production use with proper authentication:
 ```sql
 -- Run in Supabase SQL Editor or via CLI
 \i migrations/001_create_tables.sql
-\i migrations/002_create_rls_policies.sql
+\i migrations/002_create_subscription_table.sql
+\i migrations/003_create_rls_policies.sql
 ```
 
 #### Step 2: Create Auth Users
