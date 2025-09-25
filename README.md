@@ -139,24 +139,20 @@ Choose one of these methods:
 **Method B: Using SQL (Requires elevated permissions)**
 ```sql
 -- Run the auth users creation script
-\i seed/004_create_auth_users.sql
+\i seed/001_create_auth_users.sql
 ```
 
 #### Step 3: Seed Sample Data
 
 ```sql
 -- Run seed files in order
-\i seed/001_seed_organizations.sql
-\i seed/002_seed_users.sql
-\i seed/003_seed_jobs_candidates.sql
+\i seed/002_seed_organizations.sql
+\i seed/003_seed_users.sql
+\i seed/004_seed_jobs_candidates.sql
+\i seed/005_seed_subscription_plans.sql
+
 ```
 
-### Option 3: One-Command Deployment
-
-```sql
--- Run the complete deployment script
-\i deploy.sql
-```
 
 This will run everything in the correct order with proper error handling.
 
