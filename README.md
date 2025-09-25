@@ -2,7 +2,15 @@
 
 This repository contains the database schema for a multi-tenant SaaS recruitment platform built with Supabase/PostgreSQL. The system allows recruitment companies to upload job descriptions and candidate CVs, then uses AI to match candidates to jobs with scoring and recommendations.
 
-## 🏗️ Architecture Overview
+## Loom Video link, Explaining
+
+- link explaining Schema and RLS: 
+    https://www.loom.com/share/a657f762746f46f39496e7ae21b9853b?sid=0fb4cd23-ece9-4337-a949-0783762374ef
+- link showing and testing in SUpabase
+    https://www.loom.com/share/54f33a12dac842e18b0e935d8ba50e54?sid=12a474af-e6d6-4fb6-9cc5-f3181ede9a92
+
+
+## Architecture Overview
 
 The system is designed as a multi-tenant SaaS application with the following key features:
 
@@ -40,7 +48,7 @@ The system is designed as a multi-tenant SaaS application with the following key
 
 For production use with proper authentication:
 
-#### Step 1: Run Migrations from folders mentioned
+#### Step 1: Run Migrations from folders mentioned by copying the files in order and running it in supabase table
 
 ```sql
 -- Run in Supabase SQL Editor or via CLI
